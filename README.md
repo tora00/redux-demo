@@ -31,43 +31,37 @@ Demonstrates the creation and functionality of a basic React-Redux application.
 7. Inside the actions folder, create the file:
 `testAction.js`
 8. Add the following to testAction.js:
-`~~
-export const testAction = () => dispatch => {
- dispatch({
-  type: 'TEST_ACTION',
-  message: 'Hello SENG 513!'
- })
-}
-~~`
+  export const testAction = () => dispatch => {
+  dispatch({
+    type: 'TEST_ACTION',
+    message: 'Hello SENG 513!'
+  })
+  }
 9. Inside the reducers folder, create the file:
 `testReducer.js`
 10. Add the following to testReducer.js:
-`~~
-export default (state = {}, action) => {
- switch (action.type) {
-  case 'TEST_ACTION':
-   return {
-    message: action.message
-   }
-  default:
-   return state
- }
-}
-~~`
+  export default (state = {}, action) => {
+  switch (action.type) {
+    case 'TEST_ACTION':
+    return {
+      message: action.message
+    }
+    default:
+    return state
+  }
+  }
 11. Inside the store folder, create the file:
 `testStore.js`
 12. Add the following the testStore.js:
-`~~
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import testReducer from '../reducers/testReducer';
-export default function configureStore() {
- return createStore(
-  testReducer,
-   applyMiddleware(thunk)
- );
-}
-~~`
+  import { createStore, applyMiddleware } from 'redux';
+  import thunk from 'redux-thunk';
+  import testReducer from '../reducers/testReducer';
+  export default function configureStore() {
+  return createStore(
+    testReducer,
+    applyMiddleware(thunk)
+  );
+  }
 13. If desired, create the following files in the component folder:
 `First.js Seconds.js Third.js`
 14. test
