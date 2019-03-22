@@ -53,6 +53,8 @@ Demonstrates the creation and functionality of a basic React-Redux application.
 11. Inside the store folder, create the file:
 `testStore.js`
 12. Add the following the testStore.js:
+
+```javascript
   import { createStore, applyMiddleware } from 'redux';
   import thunk from 'redux-thunk';
   import testReducer from '../reducers/testReducer';
@@ -62,6 +64,8 @@ Demonstrates the creation and functionality of a basic React-Redux application.
     applyMiddleware(thunk)
   );
   }
+  ```
+
 13. If desired, create the following files in the component folder:
 `First.js Seconds.js Third.js`
 14. test
