@@ -27,7 +27,8 @@ Demonstrates the creation and functionality of a basic React-Redux application.
 `cd <app_name>`
 - Install dependancies by running:
 `npm i --save redux react-redux redux-thunk`
-- Create the following folders inside your project: actions, components, reducers, and store
+- Create the following folders inside your project's src folder:
+`/actions, /components, /reducers, /store`
 - Inside the actions folder, create the file:
 `testAction.js`
 - Add the following to testAction.js:
@@ -74,5 +75,6 @@ Demonstrates the creation and functionality of a basic React-Redux application.
   }
   ```
 
-- If desired, create the following files in the component folder:
-`First.js Seconds.js Third.js`
+- For a simple test, add the following to App.js:
+
+stuff goes here
