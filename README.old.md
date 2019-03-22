@@ -11,6 +11,10 @@ Demonstrates the creation and functionality of a basic React-Redux application.
 `cd <redux-demo>`
 4. Run:
 `npm run start`
+5. If browser window doesn't open automatically, navigate to <http://localhost:3000> to view.
+6. Install Redux DevTools Chrome extension if desired.
+7. To use the Redux DevTool, either right click the page or open with
+`Ctrl-Shift-I`
 
 ## React-Redux App Creation Instructions
 
