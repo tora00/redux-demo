@@ -1,11 +1,11 @@
-export default (state = {}, action) => {
+export default function (state = {}, action){
 	switch (action.type) {
-	  case 'TEST_ACTION':
-		return {
-		  color: action.color
-		}
-  
-	  default:
-		return state
+		case 'BUTTON_SELECTED':
+			console.log("BUTTON SELECTED AS "+action.color);
+			return {
+				color: action.color
+			}
+		default:
+			return state;
 	}
 }
