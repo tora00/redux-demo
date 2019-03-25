@@ -252,3 +252,5 @@ export default connect(mapStateToProps)(<componentName>);
   <button onClick={this.testAction}>Test!</button>
 </div>
 ```
+
+- dev-note: CHECK APP.JS AND INDEX.JS - ADD COMPONENTS TO APP
