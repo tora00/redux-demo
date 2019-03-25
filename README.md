@@ -118,7 +118,7 @@ export default function configureStore() {
 ...
 
 import { Provider } from 'react-redux'
-import configureStore from './store';
+import configureStore from './store/testStore';
 
 ...
 
@@ -157,8 +157,7 @@ ReactDOM.render(
 
 ```javascript
 import React from 'react';
-import testAction from '../actions/testAction.js'
-import test from '../styles/test.css'
+import '../styles/test.css'
 
 class Component1 extends React.Component {
   constructor(props) {
@@ -166,7 +165,7 @@ class Component1 extends React.Component {
   }
 
   componentDidMount() {
-    this.setState( color: 'Red')
+    this.setState({color: 'Red'})
   }
 
   render() {
@@ -185,12 +184,15 @@ export default Component1;
 
 ```javascript
 import React from 'react';
-import testAction from '../actions/testAction.js'
-import test from '../styles/test.css'
+import '../styles/test.css'
 
 class Component2 extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    this.setState({color: 'Red'})
   }
 
   render() {
@@ -227,7 +229,7 @@ import {testAction} from './actions/testAction'
 
 ...
 
-testAction = (event) => {
+testAction = () => {
  this.props.testAction();
 }
 
