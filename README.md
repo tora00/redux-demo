@@ -88,7 +88,7 @@ export default (state = {}, action) => {
   switch (action.type) {
     case 'TEST_ACTION':
       return {
-        message: action.color
+        color: action.color
       }
 
     default:
@@ -139,16 +139,16 @@ ReactDOM.render(
       /components
       /styles
 
-- Inside the `styles` folder, create the file: `test_style.css`
+- Inside the `styles` folder, create the file: `test.css`
 
-- Add the following to `test_style.css`:
+- Add the following to `test.css`:
 
 ```css
-tseasdfs
-sgdfg
-df
-gsdf
-gsd
+.test-container {
+  background: #FFFFFFaa;
+  border-color: #000000;
+  border: inset;
+}
 ```
 
 - Inside the `components` folder, create the files: `Component1.js, Component2.js`
@@ -157,15 +157,22 @@ gsd
 
 ```javascript
 import React from 'react';
+import testAction from '../actions/testAction.js'
+import test from '../styles/test.css'
 
 class Component1 extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    this.setState( color: 'Red')
+  }
+
   render() {
     return (
-      <div className='testContainer'>
+      <div className='test-container'>
+        Container 1!
       </div>
     );
   }
@@ -178,6 +185,8 @@ export default Component1;
 
 ```javascript
 import React from 'react';
+import testAction from '../actions/testAction.js'
+import test from '../styles/test.css'
 
 class Component2 extends React.Component {
   constructor(props) {
@@ -186,7 +195,8 @@ class Component2 extends React.Component {
 
   render() {
     return (
-      <div className='testContainer'>
+      <div className='test-container'>
+        Container 2!
       </div>
     );
   }
@@ -210,18 +220,33 @@ export default connect()(<componentName>);
 
 - In order to test the store inside of the desired component(s) (`App.js, Component1.js, Component2.js`), an action must be imported, and the `mapStateToProps` function must be included in each component:
 
-```javscript
+```javascript
 ...
 
 import {testAction} from './actions/testAction'
 
 ...
 
+testAction = (event) => {
+ this.props.testAction();
+}
+
 const mapStateToProps = state => ({
   ...state
 })
 
 ...
+
+export default connect(mapStateToProps)(<componentName>);
 ```
 
-- ajdfjas
+- To give us something to interact with on the page, modify the following in
+  `Component1.js` and `Component2.js`:
+
+```html
+<div className='test-container'>
+  Container x!
+  {JSON.stringify(this.props.color)}
+  <button onClick={this.testAction}>Test!</button>
+</div>
+```
